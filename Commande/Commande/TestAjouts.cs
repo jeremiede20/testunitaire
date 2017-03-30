@@ -46,5 +46,28 @@ namespace GestionCommande.Test
             ctrl.CreerProduit(p.Designation,p.Prix);
             Assert.AreEqual("String XL", ctrl.GetProduits().Last().Designation);
         }
+
+
+
+
+        // Test unitaire hors fonction à implémenter
+
+        /**
+         * Test unitaire de commande
+         * */
+        [TestMethod]
+        public void TestCommande()
+        {
+            CommandeControleur ctrl = new CommandeControleur();
+
+            Commande co = new Commande();
+            co.Client = "Tony";
+            co.LignesCommande = 3;
+
+
+
+            ctrl.CreerCommande(co.Client,co.LignesCommande);
+            Assert.AreEqual("Tony", ctrl.GetCommandes().Last().Client);
+        }
     }
 }
